@@ -1,0 +1,486 @@
+/* base css for the body begins here*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --primary-color:#047aed;/*using variables in css*/
+    --secondary-color:#1c3fa8;
+    --dark-color:#002240;
+    --light-color: #f4f4f4;
+    --sucess-color:#5cb85c;
+    --error-color: #d9534f;
+}
+
+body{
+    font-family: 'lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+ul{
+    list-style-type: none; /*used to remove bullet point*/
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+h1, h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+code, pre{
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+p {
+    margin: 10px 0;
+}
+img{
+    width: 100%; /*setting the width of any image to a defined size*/
+}
+.hidden{
+    visibility: hidden;
+    height: 0;
+}
+/* base css for the body ends here*/
+
+/*styling the navbar*/
+.navbar{
+    background-color: var(--primary-color);
+    color: #fff;
+    height: 70px;
+}
+/*styling the navbar ends here*/
+
+/*styling the nav container*/
+.navbar .flex {
+    justify-content: space-between;
+}
+nav > ul{
+    display: flex;
+}
+nav > ul > li{
+padding-right: 10px;
+margin-right: 10px;
+transition: top ease 0.5s;
+}
+nav > ul a{
+    color: white;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+}
+nav > ul a:hover{
+    border-bottom: 2px white solid;
+    padding-bottom: 10px;
+    top: -5px;
+}
+h1 > a {
+    color:white; /*logo color*/
+}
+/*styling the nav container*/
+
+/*Showcase*/
+.showcase{
+    height: 400px;
+    background-color: var(--primary-color);
+    color: #fff;
+    position: relative;
+}
+.showcase h1{
+    font-size: 40px;
+}
+.showcase p{
+    padding: 20px 0;
+}
+.showcase .grid{
+    grid-template-columns: 55% 45%;
+    gap: 30px;
+    overflow: visible;
+}
+.showcase-text{
+    animation: slideInFromLeft 1s ease-in ;
+}
+.showcase-form{
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width:400px;
+    padding: 40px;
+    z-index: 100;
+    justify-self: flex-end;
+    animation: slideInFromRight 1s ease-in 
+}
+.showcase-form .form-control{
+    margin: 30px 0;
+}
+.showcase-form input[type='text'],
+.showcase-form input[type='email']{
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+.showcase-form input:focus{
+   outline: none; /* very important for form...removes the ugly border
+   on focus*/
+}
+.showcase::before, .showcase::after{
+    content: '';
+    position: absolute;
+    bottom: -70px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: rgb(255, 255, 255);
+    -webkit-transform: skewY(-3deg);
+    -ms-transform: skewY(-3deg);
+    transform: skewY(-3deg);
+    
+}
+
+/*stats*/
+.stats{
+    padding-top: 100px;
+    animation: slideInFromBottom 1s ease-in 
+}
+.stats-heading{
+    max-width: 500px;
+    margin: auto!important;
+}
+.stats .grid h3 {
+    font-size: 35px;
+}
+.stats .grid p{
+    font-size: 20px;
+    font-weight: bold;
+}
+/*stats*/
+
+/*Cli*/
+.cli .grid{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.cli .grid > *:first-child{
+    grid-column: 1/span 2;
+    grid-row:1/span 2;
+}
+
+/*Cli*/
+
+/* Cloud */
+.cloud .grid{
+    grid-template-columns: 4fr 3fr;
+}
+/* Cloud ending */
+
+/* Languages */
+
+.languages .card{
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: transform 0.2s ease-in ;
+}
+.languages .flex{
+    flex-wrap: wrap;
+}
+.languages .card h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.languages .card:hover{
+    transform: translateY(-15px);
+}
+/* languages */
+
+/* Features */
+.features-head img{
+    width: 200px;
+    justify-self: flex-end;
+}
+.features-sub-head img{
+    width: 300px;
+    justify-self: flex-end;
+}
+.features-main .card > i{
+    margin-right: 20px;
+}
+.features-main .grid{
+    padding: 30px;
+}
+.features-main .grid > *:nth-child(1){
+    grid-column: 1/span 3;
+    /* grid-row:1/span 1; */
+    justify-content: flex-start;
+}
+.features-main .grid > *:nth-child(2){
+    grid-column: 1/span 2;
+    /* grid-row:2/span 1; */
+    justify-content: flex-start;
+}
+
+/* Features Ends Here */
+
+/* Docs Starts Here */
+
+.docs-head img{
+    width: 200px;
+    justify-self: flex-end;
+}
+.docs-main nav li{
+    font-size: 17px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+.card > nav > ul{
+    display: block;
+    
+}
+.card > nav > ul > li > a{
+    color: black;
+   
+}
+.card > nav > ul > li > a:hover{
+border-bottom: 2px white solid;
+padding-bottom: 10px;
+top: -5px;
+}
+.docs-main h3{
+    margin: 20px 0;
+}
+.docs-main .grid{
+    grid-template-columns: 1fr 2fr;
+    align-items: flex-start;
+}
+.text-primary{
+    color: var(--primary-color)!important;
+}
+/* Docs ends here */
+/*utilities*/
+.container{
+    max-width: 1100px;/*this is intended to put the navbar in a box at that certain width*/
+    margin: 0 auto;/* this is used to center the content*/
+    overflow: auto;/*The overflow property only works for block elements with a specified height.*/
+    padding: 0 40px;
+   
+}
+
+.card{
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    margin: 10px;
+}
+
+.btn{
+    display: inline-block;
+    padding: 10px 30px;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+}
+.btn:hover{
+    transform: scale(0.98);
+}
+.btn-outline{
+    background-color: transparent;
+    border: 1px solid white;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;/*setting height property is very useful in 
+    content in the grid system*/
+}
+.grid-3{
+    grid-template-columns: repeat(3, 1fr);
+}
+.text-center{
+    text-align: center;
+}
+
+/*my margin top-bottom-margin*/
+.my-1{
+    margin: 1rem 0;
+}
+.my-2{
+    margin: 1.5rem 0;
+}
+.my-3{
+    margin: 2rem 0;
+}
+.my-4{
+    margin: 3rem 0;
+}
+.my-5{
+    margin: 4rem 0;
+}
+/*my margin*/
+
+/*m margin all-round-margin*/
+.m-1{
+    margin: 1rem;
+}
+.m-2{
+    margin: 1.5rem;
+}
+.m-3{
+    margin: 2rem;
+}
+.m-4{
+    margin: 3rem;
+}
+.m-5{
+    margin: 4rem;
+}
+/*margin*/
+
+/*my padding top-bottom-padding*/
+.py-1{
+    padding: 1rem 0;
+}
+.py-2{
+    padding: 1.5rem 0;
+}
+.py-3{
+    padding: 2rem 0;
+}
+.py-4{
+    padding: 3rem 0;
+}
+.py-5{
+    padding: 4rem 0;
+}
+/*my padding*/
+/*p padding all-round-padding*/
+.p-1{
+    padding: 1rem;
+}
+.p-2{
+    padding: 1.5rem;
+}
+.p-3{
+    padding: 2rem;
+}
+.p-4{
+    padding: 3rem;
+}
+.p-5{
+    padding: 4rem;
+}
+/*padding*/
+
+/* Alert */
+.alert {
+    background-color: var(--light-color);
+    padding: 10px 20px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+.alert i {
+    margin-right: 10px;
+}
+.alert-success{
+    background-color: var(--sucess-color);
+    color: white;
+}
+
+/* Backgounds & Colored Buttons */
+.bg-primary, .btn-primary{
+background-color: var(--primary-color);
+color: #fff;
+}
+.bg-secondary, .btn-secondary{
+    background-color: var(--secondary-color);
+    color: #fff;
+    }
+.bg-dark, .btn-dark{
+        background-color: var(--dark-color);
+        color: #fff;
+        }
+.bg-light, .btn-light{
+background-color: var(--light-color);
+color: #333;
+            }
+/* end background */
+
+/* Text Sizes */
+.lead{
+    font-size: 20px;
+}
+.sm{
+    font-size:1rem;
+}
+.md{
+    font-size: 2rem;
+}
+.lg{
+    font-size: 3rem;
+}
+.xl{
+    font-size: 4rem;
+}
+
+/* footer */
+footer .social a{
+    color: white;
+    margin: 0 10px;
+}
+/* Footer Ends Here */
+
+/* Animations */
+@keyframes slideInFromLeft {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes slideInFromRight {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes slideInFromTop {
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes slideInFromBottom {
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+/*utilities*/
+
+
